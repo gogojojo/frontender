@@ -1,31 +1,31 @@
-<% if current_user %>
- <%= current_user.email %>
-<% end %>
-<% @days.each do |day| %>
-  <section>
-    <h1> <%= day.date %> </h1>
-    <% day.posts.each do |post| %>
-    <%= link_to "upvote", upvote_path(:post_id => post.id), :remote => true %>
-    <%= link_to "downvote", downvote_path(:post_id => post.id), :remote => true %>
-      <div> 
-        <%= post.title %>
-        <%= post.upvotes %>
-      </div>
-    <% end %>
-  </section>
-<% end %>
-<% if current_user %>
-  <!-- button for logout -->
-  <%= link_to "logout", '/logout' %>
-<% else %>
-  <button id="open_post"> new post</button>
-  <button id='open_signup'> Signup </button>
-  <button id='open_login'> Login </button>
-<% end %>
-
-<!-- modal for post -->
-<%= render 'post' %>
-<!-- modal for sign up -->
-<%= render 'signup' %>
-<!-- modal for login -->
-<%= render 'login' %>
+<div class='sidebar'>
+  <!-- modal for post -->
+  <%= render 'post' %>
+  <!-- modal for sign up -->
+  <%= render 'signup' %>
+  <!-- modal for login -->
+  <%= render 'login' %>
+</div>
+<div class='main'>
+  <% @days.each do |day| %>
+    <section>
+      <h1> <%= day.date %> </h1>
+      <% day.posts.each do |post| %>
+      <%= link_to "upvote", upvote_path(:post_id => post.id), :remote => true %>
+      <%= link_to "downvote", downvote_path(:post_id => post.id), :remote => true %>
+        <div> 
+          <%= post.title %>
+          <%= post.upvotes %>
+        </div>
+      <% end %>
+    </section>
+  <% end %>
+  <% if current_user %>
+    <!-- button for logout -->
+    <%= link_to "logout", '/logout' %>
+  <% else %>
+    <button id="open_post"> new post</button>
+    <button id='open_signup'> Signup </button>
+    <button id='open_login'> Login </button>
+  <% end %>
+</div>
