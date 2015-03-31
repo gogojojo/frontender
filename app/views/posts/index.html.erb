@@ -8,9 +8,9 @@
     <% end %>
   </section>
 <% end %>
+<button id="open_post"> new post</button>
 
-
-<div id='form_modal' class ='hidden'>
+<div id='post_modal' class ='hidden'>
   <%= form_for Post.new() do |f| %>
     <%= f.text_field :title %>
     <%= f.submit %>
