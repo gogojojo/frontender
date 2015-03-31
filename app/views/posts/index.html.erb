@@ -1,11 +1,12 @@
 <div class='sidebar'>
+  <h4> F R 0 N T E N D E R </h4>
+  <button id="open_post"> new post</button> <br>
    <% if current_user %>
     <!-- button for logout -->
-    <%= link_to "logout", '/logout' %>
+    <%= link_to "logout", '/logout' %><br>
   <% else %>
-    <button id="open_post"> new post</button>
-    <button id='open_signup'> Signup </button>
-    <button id='open_login'> Login </button>
+    <button id='open_signup'> Signup </button><br>
+    <button id='open_login'> Login </button><br>
   <% end %>
 </div>
 <div class='main'>
@@ -18,10 +19,10 @@
       <%#= link_to "upvote", upvote_path(:post_id => post.id), :remote => true %>
       <%#= link_to "downvote", downvote_path(:post_id => post.id), :remote => true %>
         <div class='post'>
-          <h3> <%= post.title %> </h3>
+          <a href=<%=post.url%> target="_blank"><%= post.title %> </a>
           <p> Posted By: 
             <% if post.user %> 
-              <%=post.user %>
+              <%= post.user.name %>
             <% else %>
               Anon
             <% end %>
