@@ -16,3 +16,15 @@
     <%= f.submit %>
   <% end %>
 </div>
+
+<div id ='user_modal'>
+  <%= form_for User.new() do |f| %>
+
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+
+<% end %>
+</div>
