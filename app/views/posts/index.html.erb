@@ -11,13 +11,23 @@
 <div class='main'>
   <% @days.each do |day| %>
     <section>
-      <h1> <%= day.date %> </h1>
+      <div class='date'>
+        <h1> <%= day.date %> </h1>
+      </div>
       <% day.posts.each do |post| %>
-      <%= link_to "upvote", upvote_path(:post_id => post.id), :remote => true %>
-      <%= link_to "downvote", downvote_path(:post_id => post.id), :remote => true %>
-        <div> 
-          <%= post.title %>
-          <%= post.upvotes %>
+      <%#= link_to "upvote", upvote_path(:post_id => post.id), :remote => true %>
+      <%#= link_to "downvote", downvote_path(:post_id => post.id), :remote => true %>
+        <div class='post'>
+          <h3> <%= post.title %> </h3>
+          <p> Posted By: 
+            <% if post.user %> 
+              <%=post.user %>
+            <% else %>
+              Anon
+            <% end %>
+          </p>
+
+          <%#= post.upvotes %>
         </div>
       <% end %>
     </section>
