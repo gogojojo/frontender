@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331004911) do
+ActiveRecord::Schema.define(version: 20150331005834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "days", force: :cascade do |t|
+    t.string   "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -22,6 +28,10 @@ ActiveRecord::Schema.define(version: 20150331004911) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "day_id"
   end
 
+  add_index "posts", ["day_id"], name: "index_posts_on_day_id", using: :btree
+
+  add_foreign_key "posts", "days"
 end
