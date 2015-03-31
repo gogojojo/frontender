@@ -1,3 +1,6 @@
+<% if current_user %>
+ <%= current_user %>
+<% end %>
 <% @days.each do |day| %>
   <section>
     <h1> <%= day.date %> </h1>
@@ -32,11 +35,11 @@
 <div id='sessions_modal'>
   <h1>Login</h1>
 
-  <%= form_for Sessions.new() do |f|  %>
+  <%= form_for :sessions, url:'/login' do |f| %>
 
-    Email: <%= f.text_field :email %>
-    Password: <%= f.password_field :password %>
-    <%= f.submit %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit "Submit" %>
 
-  <% end %>
+<% end %>
 </div>
