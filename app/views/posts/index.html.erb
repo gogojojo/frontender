@@ -23,34 +23,9 @@
   <button id='open_login'> Login </button>
 <% end %>
 
-
-<div id='post_modal' class ='hidden'>
-  <%= form_for Post.new() do |f| %>
-    <%= f.text_field :title %>
-    <%= f.submit %>
-  <% end %>
-</div>
+<!-- modal for post -->
+<%= render 'post' %>
 <!-- modal for sign up -->
-<div id ='user_modal' class='hidden'>
-  <%= form_for User.new() do |f| %>
-
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-
-<% end %>
-</div>
+<%= render 'signup' %>
 <!-- modal for login -->
-<div id='sessions_modal' class='hidden'>
-  <h1>Login</h1>
-
-  <%= form_for :sessions, url:'/login' do |f| %>
-
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  <%= f.submit "Submit" %>
-
-<% end %>
-</div>
+<%= render 'login' %>
