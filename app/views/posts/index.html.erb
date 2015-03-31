@@ -5,6 +5,7 @@
   <section>
     <h1> <%= day.date %> </h1>
     <% day.posts.each do |post| %>
+    <%= link_to "upvote", upvote_path(:post_id => post.id), :remote => true %>
       <div> 
         <%= post.title %>
       </div>
