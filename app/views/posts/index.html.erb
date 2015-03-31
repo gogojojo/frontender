@@ -1,5 +1,5 @@
 <% if current_user %>
- <%= current_user %>
+ <%= current_user.email %>
 <% end %>
 <% @days.each do |day| %>
   <section>
@@ -14,7 +14,15 @@
     <% end %>
   </section>
 <% end %>
-<button id="open_post"> new post</button>
+<% if current_user %>
+  <!-- button for logout -->
+  <%= link_to "logout", '/logout' %>
+<% else %>
+  <button id="open_post"> new post</button>
+  <button id='open_signup'> Signup </button>
+  <button id='open_login'> Login </button>
+<% end %>
+
 
 <div id='post_modal' class ='hidden'>
   <%= form_for Post.new() do |f| %>
@@ -22,8 +30,8 @@
     <%= f.submit %>
   <% end %>
 </div>
-
-<div id ='user_modal'>
+<!-- modal for sign up -->
+<div id ='user_modal' class='hidden'>
   <%= form_for User.new() do |f| %>
 
   Name: <%= f.text_field :name %>
@@ -34,8 +42,8 @@
 
 <% end %>
 </div>
-
-<div id='sessions_modal'>
+<!-- modal for login -->
+<div id='sessions_modal' class='hidden'>
   <h1>Login</h1>
 
   <%= form_for :sessions, url:'/login' do |f| %>
@@ -46,4 +54,3 @@
 
 <% end %>
 </div>
-<%= link_to "logout", '/logout' %>
