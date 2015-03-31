@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @days = Day.all 
     @posts = Post.all
   end
 
