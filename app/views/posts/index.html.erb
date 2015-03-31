@@ -1,10 +1,12 @@
 <div class='sidebar'>
-  <!-- modal for post -->
-  <%= render 'post' %>
-  <!-- modal for sign up -->
-  <%= render 'signup' %>
-  <!-- modal for login -->
-  <%= render 'login' %>
+   <% if current_user %>
+    <!-- button for logout -->
+    <%= link_to "logout", '/logout' %>
+  <% else %>
+    <button id="open_post"> new post</button>
+    <button id='open_signup'> Signup </button>
+    <button id='open_login'> Login </button>
+  <% end %>
 </div>
 <div class='main'>
   <% @days.each do |day| %>
@@ -20,12 +22,10 @@
       <% end %>
     </section>
   <% end %>
-  <% if current_user %>
-    <!-- button for logout -->
-    <%= link_to "logout", '/logout' %>
-  <% else %>
-    <button id="open_post"> new post</button>
-    <button id='open_signup'> Signup </button>
-    <button id='open_login'> Login </button>
-  <% end %>
 </div>
+  <!-- modal for post -->
+  <%= render 'post' %>
+  <!-- modal for sign up -->
+  <%= render 'signup' %>
+  <!-- modal for login -->
+  <%= render 'login' %>
