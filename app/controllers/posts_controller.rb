@@ -10,8 +10,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params.require(:post).permit(:title, :url, :description))
     if @post.save
-      if Day.find_by(date: @post.created_at.strftime('%b %d %Y'))
-        @day = Day.find_by(date: @post.created_at.strftime('%b %d %Y'))
+      if Day.find_by(date: @post.created_at.strftime('%b %d'))
+        @day = Day.find_by(date: @post.created_at.strftime('%b %d'))
         @post.day_id = @day.id 
         @post.upvotes = 1
         if current_user 
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
         @post.save
         redirect_to '/'
       else
-        @day = Day.create(date: @post.created_at.strftime('%b %d %Y') )
+        @day = Day.create(date: @post.created_at.strftime('%b %d') )
         @post.day_id = @day.id
         @post.upvotes = 1
         if current_user 
