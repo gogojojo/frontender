@@ -11,4 +11,8 @@ $( function () {
    $( "#open_login" ).click(function() {
   $( "#sessions_modal").removeClass('hidden')
 });
+   $( ".fa-arrow-up" ).click(function() {
+    $(this).css('color', "white");
+    $(this).click(function () { return false; });
+  });
 })
