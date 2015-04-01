@@ -14,22 +14,25 @@
 </div>
 <div class='main'>
   <% @days.each do |day| %>
-    <section>
+    <section class='holder'>
 <!--       <div class='date'>
         <h1> <%#= day.date %> </h1>
       </div> -->
       <% day.posts.order("created_at DESC").each do |post| %>
-      <div class='up'>
+        <div class='post'>
+          <div class='up'>
         <%= link_to upvote_path(:post_id => post.id), :remote => true do %>
         <i class="fa fa-arrow-up"></i>
         <% end %>
       </div>
-      <div class='down'>
-        <%= link_to downvote_path(:post_id => post.id), :remote => true do %>
-        <i class="fa fa-arrow-down"></i>
-        <% end %>
+      <div class='votes'>
+        <%= post.upvotes %>
       </div>
-        <div class='post'>
+      <!-- <div class='down'>
+        <%#= link_to downvote_path(:post_id => post.id), :remote => true do %>
+        <i class="fa fa-arrow-down"></i>
+        <%#end %>
+      </div> -->
           <div class='calender'>
             <% day = post.day.date.split(' ') %>
             <h4> <%= day.first%> </h4>
