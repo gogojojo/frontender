@@ -2,7 +2,7 @@
   <h4> F R O N T - E N D E R </h4>
   <p> Your daily source of front-end dopeness. </p>
   <div class='buttons'>
-    <button id="open_post"> NEW POST </button> <br>
+    <button id="open_post"> POST A LINK </button> <br>
      <%# if current_user %>
       <!-- button for logout -->
       <%#= link_to "logout", '/logout' %><br>
@@ -27,9 +27,9 @@
             <h4> <%= day.first%> </h4>
             <h4 class='num'> <%= day.last%> </h4>
           </div>
-          <h3> <a href=<%=post.url%> target="_blank"><%= post.title %> </a> </h3>
+          <h3> <a href="http://<%=post.url%>" target="_blank"><%= post.title.capitalize  %> </a> </h3>
           <p> 
-            <%= post.description %>
+             <%= post.description.capitalize  %> 
             <!-- Posted By:  -->
             <%# if post.user %> 
               <%#= post.user.name %>

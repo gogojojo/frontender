@@ -29,6 +29,8 @@ class PostsController < ApplicationController
         @post.save
         redirect_to '/'
       end
+    else
+      redirect_to '/'
     end
   end
   def upvote

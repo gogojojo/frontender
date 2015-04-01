@@ -76,11 +76,13 @@ h3 {
   font-family: 'Gentium Basic', serif;
   padding-left: 6vw;
   font-size: 18px;
-  margin: 5px 0 10px 0;
+  margin: 5px 0 20px 0;
   }
 }
 .post:nth-child(4n+0) {
   background-color: #9DE0AD;
+  opacity: 0.9;
+  box-shadow: 0px -3px 0px #7EB38A;
   a {
     color: #45ADA8;
   }
@@ -92,6 +94,8 @@ h3 {
 }
 .post:nth-child(4n+1) {
   background-color: #45ADA8;
+  opacity: 0.9;
+  box-shadow: 0px -3px 0px #388C88;
   a {
     color: #547980;
   }
@@ -103,6 +107,8 @@ h3 {
 }
 .post:nth-child(4n+2) {
    background-color: #594F4F;
+   opacity: 0.9;
+  box-shadow: 0px -3px 0px #504747;
   a {
     color: #9DE0AD;
   }
@@ -114,6 +120,8 @@ h3 {
 }
 .post:nth-child(4n+3) {
    background-color: #547980;
+   opacity: 0.9;
+  box-shadow: 0px -3px 0px #4C6D73;
   a {
     color: #E5FCC2;
   }
@@ -129,7 +137,7 @@ h3 {
   right: 3vw;
   vertical-align: middle;
   height: 100%;
-  margin-top: 11px;
+  margin-top: 15px;
   h4 {
     background-color: black;
     opacity: 0.7;
