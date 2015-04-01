@@ -19,8 +19,16 @@
         <h1> <%#= day.date %> </h1>
       </div> -->
       <% day.posts.order("created_at DESC").each do |post| %>
-      <%#= link_to "upvote", upvote_path(:post_id => post.id), :remote => true %>
-      <%#= link_to "downvote", downvote_path(:post_id => post.id), :remote => true %>
+      <div class='up'>
+        <%= link_to upvote_path(:post_id => post.id), :remote => true do %>
+        <i class="fa fa-arrow-up"></i>
+        <% end %>
+      </div>
+      <div class='down'>
+        <%= link_to downvote_path(:post_id => post.id), :remote => true do %>
+        <i class="fa fa-arrow-down"></i>
+        <% end %>
+      </div>
         <div class='post'>
           <div class='calender'>
             <% day = post.day.date.split(' ') %>
