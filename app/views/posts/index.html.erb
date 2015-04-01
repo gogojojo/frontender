@@ -13,12 +13,12 @@
   </div>
 </div>
 <div class='main'>
-  <% @days.each do |day| %>
+  <% @days.order(created_at: :desc).each do |day| %>
     <section class='holder'>
 <!--       <div class='date'>
         <h1> <%#= day.date %> </h1>
       </div> -->
-      <% day.posts.order(:upvotes).each do |post| %>
+      <% day.posts.order(upvotes: :desc).each do |post| %>
         <div class='post'>
         <div class='up'>
           <%= link_to upvote_path(:post_id => post.id), :remote => true do %>
