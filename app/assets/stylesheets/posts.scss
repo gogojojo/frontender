@@ -43,9 +43,6 @@
   display: inline-block;
   float: right;
 }
-.holder {
-  position: relative;
-}
 .up {
   position: absolute;
   top: 25px;
@@ -91,24 +88,7 @@ h3 {
   margin: 5px 0 20px 0;
   }
 }
-.post:nth-child(4n+0) {
-  background-color: #9DE0AD;
-  opacity: 0.9;
-  box-shadow: 0px -3px 0px #7EB38A;
-  a {
-    color: #45ADA8;
-    text-shadow: 1px 1px #378A86;
-    i {
-      text-shadow: none;
-    }
-  }
-  .calender {
-    h4 {
-        color: #9DE0AD;
-      }
-  }
-}
-.post:nth-child(4n+1) {
+.post:nth-of-type(4n+1) {
   background-color: #45ADA8;
   opacity: 0.9;
   box-shadow: 0px -3px 0px #388C88;
@@ -125,7 +105,7 @@ h3 {
       }
   }
 }
-.post:nth-child(4n+2) {
+.post:nth-of-type(4n+2) {
    background-color: #594F4F;
    opacity: 0.9;
   box-shadow: 0px -3px 0px #504747;
@@ -142,7 +122,7 @@ h3 {
       }
   }
 }
-.post:nth-child(4n+3) {
+.post:nth-of-type(4n+3) {
    background-color: #547980;
    opacity: 0.9;
   box-shadow: 0px -3px 0px #4C6D73;
@@ -156,6 +136,23 @@ h3 {
   .calender {
     h4 {
         color: #547980;
+      }
+  }
+}
+.post:nth-of-type(4n+4) {
+  background-color: #9DE0AD;
+  opacity: 0.9;
+  box-shadow: 0px -3px 0px #7EB38A;
+  a {
+    color: #45ADA8;
+    text-shadow: 1px 1px #378A86;
+    i {
+      text-shadow: none;
+    }
+  }
+  .calender {
+    h4 {
+        color: #9DE0AD;
       }
   }
 }

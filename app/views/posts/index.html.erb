@@ -14,7 +14,6 @@
 </div>
 <div class='main'>
   <% @days.order(created_at: :desc).each do |day| %>
-    <section class='holder'>
 <!--       <div class='date'>
         <h1> <%#= day.date %> </h1>
       </div> -->
@@ -49,7 +48,6 @@
           <%#= post.upvotes %>
         </div>
       <% end %>
-    </section>
   <% end %>
 </div>
   <!-- modal for post -->
