@@ -13,7 +13,7 @@
   </div>
 </div>
 <div class='main'>
-  <% @days.order(created_at: :desc).each do |day| %>
+  <% @days.order(created_at: :desc)[0..4].each do |day| %>
 <!--       <div class='date'>
         <h1> <%#= day.date %> </h1>
       </div> -->
