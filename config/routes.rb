@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :posts
   resources :sessions
+  resources :users
   get '/' => 'posts#index'
   get '/logout' => 'sessions#destroy'
   get '/login12345678910' => 'sessions#new'
